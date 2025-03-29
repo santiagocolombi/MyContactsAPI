@@ -12,8 +12,8 @@ const client = new Client({
 client.connect();
 
 exports.query = async (query, values ) => {
-    const { rows } = await client.query(query, values);
-    return rows;
+    const { rows } = await client.query(query, values);  //isso que permite execução de comandos sql como os de
+    return rows;                                         //ContactsRepository e CategoryRepository
 };
 
 

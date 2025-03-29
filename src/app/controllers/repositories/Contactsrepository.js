@@ -32,14 +32,14 @@ class ContactsRepository {
 
 
 
-    async create({ name, email, phone, category_id, }) { // Corrigido para usar category em vez de category_id
+    async create({ name, email, phone, category_id, }) {
        const [row] = await db.query(` INSERT INTO contacts (name, email, phone, category_id) VALUES(
       $1, $2, $3, $4) RETURNING * `,[name, email, phone, category_id]); // evitar sql injection com o $
       return row;
     }
 
 
-   async update(id, { name, email, phone, category_id }) { // Corrigido para usar category em vez de category_id
+   async update(id, { name, email, phone, category_id }) {
         const [row] = await db.query(`
             UPDATE contacts
             SET name = $1,
