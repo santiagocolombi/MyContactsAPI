@@ -79,7 +79,7 @@ class ContactController {
         }
 
        }
-        if (category_id && !isValidUuid(category_id)) {
+        if (category_id && !isValidUUID(category_id)) {
             return response.status(400).json({ error: 'Invalid category_id format' });
         }
 
